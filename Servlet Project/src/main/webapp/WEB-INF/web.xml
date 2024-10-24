@@ -17,6 +17,15 @@
         <servlet-class>com.koreait.servlet_project.ThirdServlet</servlet-class>
     </servlet>
 
+
+    <!-- 1. localhost:8080/servlet_project_war_exploded/first 입력시-->
+    <!-- 2. 주소 간단하게 하는법:
+        위에 Tomcat
+        > edit configurations
+        > Deployment > 하단 application content에 / 만 입력
+        =>  localhost:8080/first 로 접근 가능해짐
+    -->
+
     <servlet-mapping>
         <servlet-name>first</servlet-name>
         <url-pattern>/first</url-pattern>
