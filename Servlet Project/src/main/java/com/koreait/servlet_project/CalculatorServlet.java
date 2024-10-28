@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// webapp > calc.html 참고
 @WebServlet("/calculator")
 public class CalculatorServlet extends HttpServlet {
     @Override

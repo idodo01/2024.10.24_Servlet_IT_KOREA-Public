@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter</title>
+</head>
+<body>
+<form>
+  경로 번호 <input type="text"> <br>
+  값: <input type="text"> <br>
+  <button>가라</button>
+</form>
+</body>
+</html>
+<script>
+  const form = document.forms[0];
+  const [i1, i2] = document.querySelectorAll('input');
+  const button = document.querySelector('button');
+  button.onclick = () => {
+    form.action = `/filter/req${i1.value}`;
+  }
+</script>
+
+
+
+

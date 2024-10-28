@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// webapp > login.html 참고
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @Override

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form action="/login" method="post">
+    ID: <input type="text" name="id"> <br>
+    PW: <input type="text" name="pw"> <br>
+    <input type="checkbox"> 아이디저장 <br>
+    <button>로그인</button>
+</form>
+</body>
+</html>
+<script>
+    const idInput = document.querySelector('input[name=id]');
+    const checkBox = document.querySelector('input[type=checkbox]');
+    const loginBtn = document.querySelector('button');
+
+
+    // 2. id_save에 id값이 들어있으면,
+    // checkBox에 check 해두고
+    // 해당 id를 input에 출력되도록 함
+    const [key, value] = document.cookie.split('=');
+    if(key === 'id_save' && value !== ''){
+        checkBox.checked = true; // 미리 체크해놓기
+        idInput.value = value; // id값을 미리 넣기
+    }
+
+
+    // 1. 로그인할 때, (아이디 저장 체크박스에) 체크를 했다면
+    // 아이디를 쿠키에 저장해둔다
+    loginBtn.onclick = () => {
+        if(checkBox.checked){
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + 1);
+            document.cookie = `id_save=${idInput.value};path=/;expires=${now.toUTCString()}`;
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
